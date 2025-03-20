@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import os 
 import time 
+import subprocess
+
+isFirstLoop=True
 
 
 while True:
@@ -8,8 +11,12 @@ while True:
     results=os.popen("git status").read()
     if "branch is behind" in results:
         os.system("git pull")
-
         print("gerisdesin")
+        time.sleep(5)
+        os.system("reboot")        
     else:
         print("herikulade kod ")
-    time.sleep(10)
+        if isFirstLoop:
+            isFirstLoop=False
+            subprocess.Popen(" myenc/")
+    time.sleep(100)
