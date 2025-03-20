@@ -2,8 +2,11 @@
 import os 
 import time 
 import subprocess
+import protectless_version
 
-isFirstLoop=True
+import asyncio
+asyncio.run(protectless_version.executeApp()) 
+
 
 
 while True:
@@ -16,7 +19,6 @@ while True:
         os.system("reboot")        
     else:
         print("herikulade kod ")
-        if isFirstLoop:
-            isFirstLoop=False
-            #subprocess.Popen(" myenc/")
-    time.sleep(100)
+
+
+    time.sleep(10)

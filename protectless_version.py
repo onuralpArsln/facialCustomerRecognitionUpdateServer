@@ -505,10 +505,20 @@ def check_serial():
         #os.system("sudo shutdown -h now")
     else:
         print("Sistem yetkili!")
-if __name__ == "__main__":
+
+def executeApp():
     check_serial()
     root = tk.Tk()
     app = App(root)
     root.protocol("WM_DELETE_WINDOW", app.on_close)  # Pencere kapatma işlemi
     root.mainloop()
+
+
+if __name__ == "__main__":
     
+    check_serial()
+    root = tk.Tk()
+    app = App(root)
+    root.protocol("WM_DELETE_WINDOW", app.on_close)  # Pencere kapatma işlemi
+    root.mainloop()
+
