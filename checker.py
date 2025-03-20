@@ -18,5 +18,5 @@ while True:
         print("herikulade kod ")
         if isFirstLoop:
             isFirstLoop=False
-            subprocess.Popen(" myenc/")
+            #subprocess.Popen(" myenc/")
     time.sleep(100)
