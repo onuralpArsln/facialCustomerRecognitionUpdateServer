@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 import os
 import time
-import asyncio
+import multiprocessing
 import protectless_version
 
-async def main():
-    # Start the async function in the background
-    asyncio.create_task(protectless_version.executeApp())
+def run_async_task():
+    import asyncio
+    asyncio.run(protectless_version.executeApp())  # Runs executeApp in a separate process
+
+if __name__ == "__main__":
+    # Start executeApp in a separate process
+    process = multiprocessing.Process(target=run_async_task)
+    process.start()
 
     while True:
         os.system("git fetch")
@@ -14,11 +19,9 @@ async def main():
         if "branch is behind" in results:
             os.system("git pull")
             print("gerisdesin")
-            await asyncio.sleep(5)  # Use async sleep
+            time.sleep(5)
             os.system("reboot")
         else:
             print("herikulade kod")
 
-        await asyncio.sleep(10)  # Use async sleep
-
-asyncio.run(main())  # Run the event loop
+        time.sleep(10)
