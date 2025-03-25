@@ -124,6 +124,7 @@ class App:
             ret =True
             if mod == "linux":    
                 ret, frame = cap.read()
+                frame = cv2.flip(frame, -1)  # Flips both vertically and horizontally
             else:
                 frame=camera.capture_array()
                 #frame=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
