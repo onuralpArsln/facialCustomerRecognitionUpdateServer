@@ -14,6 +14,7 @@ def checkUpdate():
             print("gerisdesin")
             time.sleep(5)
             os.system("reboot")
+            os.system("sudo reboot")
         else:
             print("herikulade kod")
 
