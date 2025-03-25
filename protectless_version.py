@@ -126,7 +126,7 @@ class App:
                 ret, frame = cap.read()
             else:
                 frame=camera.capture_array()
-                frame = cv2.flip(frame, -1)  # Flips both vertically and horizontally
+                frame = cv2.flip(frame, -1)  # Flips both vertically and horizontally kablolar alt tta kalsın
                 #frame=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
             if not ret:
                 print("Failed to grab frame")
